@@ -16,16 +16,16 @@ export default function TabLayout() {
             <Tabs.Screen
                 name="index"
                 options={{
-                    title:'home',
+                    title:'Home',
                     tabBarIcon: ({color}) => <Ionicons name="home-outline" color={color}/>
                 }}
             />
 
             <Tabs.Screen
-                name="List"
+                name="perfil"
                 options={{
-                    title:'Explore',
-                    tabBarIcon: ({color}) => <Ionicons name="home-outline" color={color}/>
+                    title:'Perfil',
+                    tabBarIcon: ({color}) => <Ionicons name="settings-outline" color={color}/>
                 }}    
             />
             

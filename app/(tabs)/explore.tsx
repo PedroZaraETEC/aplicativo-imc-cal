@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet} from "react-native";
 import ImcForms from "@/components/ImcForms";
 
-export default function home() {
+export default function explore() {
     return(
     <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
         <Text style={style.text}>Calculo IMC</Text>

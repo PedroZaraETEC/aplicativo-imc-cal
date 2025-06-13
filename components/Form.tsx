@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CheckBox, Button, TextInput, View, Text } from "react-native";
+import { Button, TextInput, View, Text } from "react-native";
 
 export default function Form() {
     const [exibir, setExibir] = useState(false);
