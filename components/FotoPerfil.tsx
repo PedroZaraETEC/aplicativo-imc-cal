@@ -2,21 +2,37 @@ import { handleUrlParams } from "expo-router/build/fork/getStateFromPath-forks";
 import React, { useState } from "react";
 import { View, Image, StyleSheet, Button } from "react-native";
 import {launchImageLibrary} from 'react-native-image-picker';
+import ImagePicker from 'react-native-image-picker';
 
-
+//Image picker
 
 export default function FotoPerfil() {
     const [imagemEscolhida, setImageEscolhida] = useState(null);
     
-    const openImagePicker = () => {
-        const options = {
-            mediaType: 'photo',
-            includeBase64: false,
-            maxHeight: 2000,
-            maxWidth: 2000,
-        };
-        launchImageLibrary(options, handleUrlParams);
-    }   
+const setImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images', 'videos'],
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+}
+
+    const result = await launchImageLibrary(options?);
+    
+    ImagePicker.launchImageLibrary(options, (response) => {
+      console.log('Resposta', response);
+
+      if (response.didCancel) { 
+        console.log('Seleção Cancelada!');
+      } else if (response.error) {
+        console.log('Erro', response.error);
+      } else if (response.customButton) {
+        console.log('Botão Customizado', response.customButton);
+      } else {
+        const source = { uri: response.uri };
+      }
+    });
 
     /*function pegarImagem() {
         const resultado = await ImagePicker.launchImageLibrary(
