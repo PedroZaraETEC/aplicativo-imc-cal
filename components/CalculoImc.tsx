@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, TextInput, View,Text, StyleSheet } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function ImcForms() {
     const [altura, setAltura] = useState('');
